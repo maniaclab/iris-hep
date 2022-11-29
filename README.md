@@ -1,4 +1,4 @@
-# The ML Portal web application
+# The ATLAS ML Portal web application
 
 ## Architecture
 
