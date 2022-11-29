@@ -1,4 +1,4 @@
-# The AF Portal web application
+# The ML Portal web application
 
 ## Architecture
 
