@@ -41,6 +41,7 @@ def signup():
 @app.route('/login')
 def login():
     redirect_uri = url_for('login', _external=True)
+    print('Login redirect uri: %s' %redirect_uri)
     client = globus_sdk.ConfidentialAppAuthClient(app.config['CLIENT_ID'], app.config['CLIENT_SECRET'])
     client.oauth2_start_flow(redirect_uri, refresh_tokens=True)
     if 'code' not in request.args:
