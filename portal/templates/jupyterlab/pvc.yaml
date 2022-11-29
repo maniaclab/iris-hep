@@ -1,15 +1,14 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  labels:
-      k8s-app: jupyterlab
-      owner: {{owner}}
-  name: {{owner}}-cephfs-pvc
+  name: {{username}}-cephfs-pvc
   namespace: {{namespace}}
+  labels:
+    owner: {{username}}
 spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 50Gi
+      storage: 10Gi
   storageClassName: rook-cephfs

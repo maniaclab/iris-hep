@@ -15,24 +15,24 @@ html, body {
 
 #carousel:before {
     color: #6c757d;
-    content: "Tier 3 computing";
+    content: "Frontier";
     animation-name: carousel;
     animation-duration: 15s;
     animation-iteration-count: infinite;
 }
 
 @keyframes carousel {
-    0% { content: "Tier 3 computing"; }
-    22% { content: "Tier 3 computing"; }
-    33% { content: "Batch processing via HTCondor"; }
-    55% { content: "Batch processing via HTCondor"; }
-    66% { content: "Pythonic analysis"; }
-    88% { content: "Pythonic analysis"; }
+    0% { content: "Frontier"; }
+    22% { content: "Frontier"; }
+    33% { content: "PS-Dash"; }
+    55% { content: "PS-Dash"; }
+    66% { content: "Tracer"; }
+    88% { content: "Tracer"; }
 }
 
 section {
     margin: 1em;
-    min-height: 600px;
+    min-height: 500px;
 }
 
 footer {

@@ -3,9 +3,9 @@
 <html lang="en">
 
 <head>
-  <title>Analysis Facility - {% block title %}{% endblock %}</title>
+  <title>ATLAS ML - {% block title %}{% endblock %}</title>
   <meta charset="UTF-8">
-  <meta name="description" content="ATLAS Analysis Facility at UChicago">
+  <meta name="description" content="ATLAS Distributed Computing Analytics Platform">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon-32x32.png') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="{{ url_for('home') }}">
-          <img src="{{url_for('static', filename='img/atlas-af-logo.png')}}" height="35" alt="" />
+          <img src="{{url_for('static', filename='img/atlas-ml-logo.png')}}" height="35" alt="" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,28 +72,18 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Documentation
+              aria-expanded="false">
+                  Projects
               </a>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="https://maniaclab.uchicago.edu/af-docs/" target="_blank">UChicago Docs</a></li>
-                <li><a class="dropdown-item" href="https://usatlas.readthedocs.io/projects/af-docs/en/latest/" target="_blank">US ATLAS Docs</a></li>
-                <li><a class="dropdown-item" href="{{ url_for('aup') }}">Acceptable Use Policy</a></li>
-                <li><a class="dropdown-item" href="{{ url_for('hardware') }}">Hardware</a></li>
-                <li><a class="dropdown-item" href="{{ url_for('about') }}">About Page</a></li>
-              </ul>
+              <div class="dropdown-menu dropdown-menu-end">
+                  <a class="dropdown-item" href="https://frontier.uc.ssl-hep.org/" target="_blank">Frontier</a>
+                  <a class="dropdown-item" href="https://ps-dash.uc.ssl-hep.org/" target="_blank">PS-Dash</a>
+                  <a class="dropdown-item" href="https://perfsonar.uc.ssl-hep.org/" target="_blank">Tracer</a>
+                  <a class="dropdown-item" href="https://aaas.atlas-ml.org/" target="_blank">Alarms & Alerts</a>
+              </div>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Support
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="https://atlas-talk.sdcc.bnl.gov/" target="_blank">Discourse
-                    Forums</a></li>
-                <li><a class="dropdown-item" href="mailto:atlas-us-chicago-tier3-admins@cern.ch" target="_blank">System
-                    or Login Problems</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:ivukotic@uchicago.edu" target="_blank">Email</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
