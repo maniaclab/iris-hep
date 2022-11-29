@@ -156,6 +156,8 @@ def deploy_notebook(**settings):
     settings['namespace'] = namespace
     settings['domain_name'] = app.config['DOMAIN_NAME']
     settings['token'] = b64encode(os.urandom(32)).decode()
+    import pprint
+    pprint.pprint(settings)
     templates = Environment(loader=FileSystemLoader('portal/templates/jupyterlab'))
     api = client.CoreV1Api()
     # Create a pod for the notebook (the notebook runs as a container inside the pod)
@@ -330,11 +332,11 @@ def get_gpu_availability(product=None, memory=None):
     gpus = dict()
     api = client.CoreV1Api()
     if product:
-        nodes = api.list_node(label_selector='gpu=true,nvidia.com/gpu.product=%s' %product)
+        nodes = api.list_node(label_selector='gpu=nvidia,nvidia.com/gpu.product=%s' %product)
     elif memory:
-        nodes = api.list_node(label_selector='gpu=true,nvidia.com/gpu.memory=%s' %memory)
+        nodes = api.list_node(label_selector='gpu=nvidia,nvidia.com/gpu.memory=%s' %memory)
     else: 
-        nodes = api.list_node(label_selector='gpu=true') 
+        nodes = api.list_node(label_selector='gpu=nvidia') 
     for node in nodes.items:
         product = node.metadata.labels['nvidia.com/gpu.product']
         memory = int(node.metadata.labels['nvidia.com/gpu.memory'])

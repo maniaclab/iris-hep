@@ -4,10 +4,10 @@ metadata:
   labels:
     instance: {{notebook_id}}
     display-name: {{display_name}}
-    k8s-app: privatejupyter
-    owner: {{username}}
+    k8s-app: jupyterlab
+    owner: {{owner}}
     globus-id: {{globus_id}}
-    time2delete: ttl-{{hours}}
+    time2delete: ttl-{{hours_remaining}}
   name: {{notebook_id}}
   namespace: {{namespace}}
 spec:
@@ -29,7 +29,7 @@ spec:
           name: ciconnect-creds
           key: token
     - name: OWNER
-      value: {{username}}
+      value: {{owner}}
     image: {{image}}
     imagePullPolicy: Always
     ports:
@@ -49,7 +49,7 @@ spec:
         {% endif %}
     volumeMounts:
         - name: mypvc
-          mountPath: /home/{{username}}
+          mountPath: /home/{{owner}}
   tolerations:
   - key: "atlas-analytics"
     operator: "Equal"
@@ -59,6 +59,6 @@ spec:
   volumes:
   - name: mypvc
     persistentVolumeClaim:
-      claimName: {{username}}-cephfs-pvc
+      claimName: {{owner}}-cephfs-pvc
       readOnly: false
       accessMode: ReadWriteMany

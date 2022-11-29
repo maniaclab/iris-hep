@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{username}}-cephfs-pvc
+  name: {{owner}}-cephfs-pvc
   namespace: {{namespace}}
   labels:
-    owner: {{username}}
+    owner: {{owner}}
 spec:
   accessModes:
     - ReadWriteMany
