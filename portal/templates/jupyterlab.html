@@ -29,7 +29,7 @@
 </section>
 <script type="text/javascript">
 $(document).ready(function() {
-  console.log("{{request.host_url}}");
+  const URL_ROOT = "{{request.host}}".includes("localhost") ? "http://{{request.host}}" : "https://{{request.host}}";
   const table = $("#notebooks").DataTable({
     processing: true,
     ajax: { url: "{{ url_for('get_notebooks') }}", dataSrc: "notebooks"},
@@ -123,7 +123,7 @@ $(document).ready(function() {
   }).on("click", "a.remove-button", function() {
     const row = table.row($(this).parents("tr"));
     const rowData = row.data();
-    fetch("{{request.host_url}}jupyterlab/remove/" + rowData.id).then(resp => resp.json()).then(resp => {
+    fetch(URL_ROOT + "/jupyterlab/remove/" + rowData.id).then(resp => resp.json()).then(resp => {
       if (resp) {
         rowData.status = "Removing notebook...";
         row.data(rowData).draw(true);
