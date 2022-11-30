@@ -64,10 +64,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - portal.atlas-ml.org
+        - analytics.mwt2.org
       secretName: mlportal-tls
   rules:
-    - host: portal.atlas-ml.org
+    - host: analytics.mwt2.org
       http:
         paths:
           - path: /
