@@ -1,12 +1,12 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  labels:
+    k8s-app: jupyterlab
+    notebook-id: {{notebook_id}}
   annotations: 
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-prod-nginx
-  labels:
-    instance: {{notebook_id}}
-    k8s-app: jupyterlab
   name: {{notebook_id}}
   namespace: {{namespace}}
 spec:

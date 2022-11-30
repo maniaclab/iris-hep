@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    instance: {{notebook_id}}
     k8s-app: jupyterlab
+    notebook-id: {{notebook_id}}
   name: {{notebook_id}}
   namespace: {{namespace}}
 spec:
@@ -11,5 +11,5 @@ spec:
   - port: 80
     targetPort: 9999
   selector:
-    instance: {{notebook_id}}
+    notebook-id: {{notebook_id}}
   type: NodePort

@@ -156,8 +156,7 @@ def deploy_notebook(**settings):
     settings['namespace'] = namespace
     settings['domain_name'] = app.config['DOMAIN_NAME']
     settings['token'] = b64encode(os.urandom(32)).decode()
-    import pprint
-    pprint.pprint(settings)
+    logger.info('Settings:\n%s' %str(settings))
     templates = Environment(loader=FileSystemLoader('portal/templates/jupyterlab'))
     api = client.CoreV1Api()
     # Create a pod for the notebook (the notebook runs as a container inside the pod)
