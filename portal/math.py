@@ -8,7 +8,7 @@ import pandas as pd
 
 def plot_users_over_time():
     ''' Creates a graph of user registrations over time using matplotlib. '''
-    users = connect.get_user_profiles('root.atlas-af', date_format='object')
+    users = connect.get_user_profiles('root.atlas-ml', date_format='object')
     datemin = datetime(2021, 7, 1)
     datemax = datetime.today()
     dates = pd.date_range(datemin, datemax, freq='MS').to_pydatetime().tolist()
