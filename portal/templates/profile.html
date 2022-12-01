@@ -58,7 +58,7 @@
                             </thead>
                             <tbody>
                                 {% for group in profile["group_memberships"] %}
-                                {% if group["name"] == "root.atlas-af" or group["name"].startswith("root.atlas-af.") %}
+                                {% if group["name"] == "root.atlas-ml" or group["name"].startswith("root.atlas-ml.") %}
                                 <tr>
                                     <td>{{ group["name"] }}</td>
                                     <td>

@@ -124,7 +124,7 @@ def create_profile():
                 'public_key': request.form['public_key'].strip()
             }
             connect.create_user_profile(**profile)
-            connect.update_user_role(profile['unix_name'], 'root.atlas-af', 'pending')
+            connect.update_user_role(profile['unix_name'], 'root.atlas-ml', 'pending')
             session.update(
                 unix_name=profile['unix_name'], 
                 name=profile['name'], 
@@ -176,7 +176,7 @@ def get_user_groups():
 @decorators.login_required
 def request_membership(unix_name):
     try:
-        connect.update_user_role(unix_name, 'root.atlas-af', 'pending')
+        connect.update_user_role(unix_name, 'root.atlas-ml', 'pending')
         flash('Requested membership in the ATLAS Analysis Facility group', 'success')
         return redirect(url_for('profile'))
     except ConnectApiError as err:
@@ -285,7 +285,7 @@ def user_info():
 @app.route('/admin/get_user_spreadsheet')
 @decorators.admins_only
 def get_user_spreadsheet():
-    users = connect.get_user_profiles('root.atlas-af', date_format='%m/%d/%Y')
+    users = connect.get_user_profiles('root.atlas-ml', date_format='%m/%d/%Y')
     return jsonify([
         {
             'unix_name': user['unix_name'],
@@ -435,7 +435,7 @@ def create_subgroup(group_name):
 def remove_group(group_name):
     connect.remove_group(group_name)
     flash('Removed group %s' %group_name, 'success')
-    return redirect(url_for('groups', group_name='root.atlas-af'))
+    return redirect(url_for('groups', group_name='root.atlas-ml'))
 
 @app.errorhandler(404)
 def not_found(e):

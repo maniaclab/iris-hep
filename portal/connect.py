@@ -51,7 +51,7 @@ cd <path>/<to>/af-portal
 python 
 >>> from portal import connect
 >>> from pprint import pprint
->>> profiles = connect.get_user_profiles('root.atlas-af')
+>>> profiles = connect.get_user_profiles('root.atlas-ml')
 >>> pprint(profiles)
 
 Example #4:
@@ -70,7 +70,7 @@ cd <path>/<to>/af-portal
 python 
 >>> from portal import connect
 >>> from pprint import pprint
->>> info = connect.get_group_info('root.atlas-af', date_format='calendar')
+>>> info = connect.get_group_info('root.atlas-ml', date_format='calendar')
 >>> pprint(info)
 '''
 from portal import app, logger, decorators
@@ -138,7 +138,7 @@ def get_user_profile(username, **options):
                 profile['join_date'] = parse(metadata['join_date']).strftime(date_format)
             profile['group_memberships'] = metadata['group_memberships']
             profile['group_memberships'].sort(key = lambda group : group['name'])
-            membership = list(filter(lambda group : group['name'] == 'root.atlas-af', metadata['group_memberships']))
+            membership = list(filter(lambda group : group['name'] == 'root.atlas-ml', metadata['group_memberships']))
             profile['role'] = membership[0]['state'] if membership else 'nonmember'
             return profile
     return None
@@ -174,7 +174,7 @@ def get_user_profiles(group_name, **options):
                 profile['join_date'] = parse(metadata['join_date']).strftime('%B %m %Y')
             else:
                 profile['join_date'] = parse(metadata['join_date']).strftime(date_format)
-            membership = list(filter(lambda group : group['name'] == 'root.atlas-af', metadata['group_memberships']))
+            membership = list(filter(lambda group : group['name'] == 'root.atlas-ml', metadata['group_memberships']))
             profile['role'] = membership[0]['state'] if membership else 'nonmember'
             profiles.append(profile)
         return profiles
