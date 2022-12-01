@@ -30,6 +30,12 @@ spec:
           key: token
     - name: OWNER
       value: {{owner}}
+    - name: OWNER_UID
+      value: "{{owner_uid}}"
+    - name: CONNECT_GROUP
+      value: atlas-ml
+    - name: CONNECT_GID
+      value: "5947"
     image: {{image}}
     imagePullPolicy: Always
     ports:
