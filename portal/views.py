@@ -177,7 +177,7 @@ def get_user_groups():
 def request_membership(unix_name):
     try:
         connect.update_user_role(unix_name, 'root.atlas-ml', 'pending')
-        flash('Requested membership in the ATLAS Analysis Facility group', 'success')
+        flash('Requested membership in the ATLAS Analytics group', 'success')
         return redirect(url_for('profile'))
     except ConnectApiError as err:
         flash(str(err), 'warning')
