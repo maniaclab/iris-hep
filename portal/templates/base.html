@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="{{ url_for('home') }}">
-          <img src="{{url_for('static', filename='img/atlas-logo.png')}}" height="35" alt="" />
+          <img src="{{url_for('static', filename='img/iris-hep-logo.png')}}" height="35" alt="" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,10 +109,18 @@
     {% endwith %}
   </div>
   {% block body %} {% endblock %}
-  <footer class="text-center">
-    <a href="https://www.uchicago.edu" target="_blank"><img src="{{url_for('static', filename='img/uc-logo.png')}}"></a>
-    <a href="https://efi.uchicago.edu" target="_blank"><img src="{{url_for('static', filename='img/efi-logo.png')}}"></a>
-    <a href="https://iris-hep.org" target="_blank"><img src="{{url_for('static', filename='img/iris-hep-logo.png')}}"></a>
+  <footer>
+    <div class="container col-lg-10">
+      <p class="fs12">
+        © 2022 University of Chicago. This platform is supported by the National Science Foundation: 
+        OAC-1836650 "Institute for Research and Innovation in Software for High Energy Physics (IRIS-HEP)", 
+        OAC-1724821 "CIF21 DIBBs: EI: SLATE and the Mobility of Capability", and 
+        PHY-2120747 "U.S. ATLAS Operations: Discovery and Measurement at the Energy Frontier".
+      </p>
+      <div class="text-center">
+        <a href="https://www.nsf.gov" target="_blank"><img src="{{url_for('static', filename='img/nsf-logo.png')}}"/></a>
+      </div>
+    </div>
   </footer>
 </body>
 <script type="text/javascript">

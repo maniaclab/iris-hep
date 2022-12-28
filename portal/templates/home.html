@@ -5,8 +5,8 @@
 {% block body %}
 <section>
     <div class="container text-center">
-        <img id="site-logo" src="{{url_for('static', filename='img/atlas-logo.png')}}">
-        <h4>ATLAS Distributed Computing Analytics Platform</h4>
+        <img id="site-logo" src="{{url_for('static', filename='img/iris-hep-ssl-logo.png')}}">
+        <h4>A Scalable Systems Laboratory for IRIS-HEP</h4>
         <p id="carousel"></p>
         {% if not session.get('is_authenticated') %}
         <a href="{{ url_for('login') }}" role="button" class="btn btn-sm btn-primary">Login</a>

@@ -5,8 +5,8 @@ html, body {
 }
 
 #site-logo {
-    width: 25%;
-    margin: 2em 0 2em;
+    max-height: 200px;
+    margin: 0 0 2em;
 }
 
 #carousel {
@@ -15,33 +15,32 @@ html, body {
 
 #carousel:before {
     color: #6c757d;
-    content: "Frontier";
+    content: "CoDaS-HEP training platform";
     animation-name: carousel;
     animation-duration: 15s;
     animation-iteration-count: infinite;
 }
 
 @keyframes carousel {
-    0% { content: "Frontier"; }
-    22% { content: "Frontier"; }
-    33% { content: "PS-Dash"; }
-    55% { content: "PS-Dash"; }
-    66% { content: "Tracer"; }
-    88% { content: "Tracer"; }
+    0% { content: "CoDaS-HEP training platform"; }
+    22% { content: "CoDaS-HEP training platform"; }
+    33% { content: "A Kubernetes DevOps platform for DOMA, Analysis Systems and Innovative Algorithms"; }
+    55% { content: "A Kubernetes DevOps platform for DOMA, Analysis Systems and Innovative Algorithms"; }
+    66% { content: "Analysis Facility prototyping"; }
+    88% { content: "Analysis Facility prototyping"; }
 }
 
 section {
     margin: 1em;
-    min-height: 500px;
+    min-height: 450px;
 }
 
 footer {
-    margin: 1em 0 1em;
+    margin: 0 0 1em;
 }
 
 footer img {
-    max-height: 55px;
-    margin-right: 50px;
+    max-height: 85px;
 }
 
 footer a, footer a:hover {
