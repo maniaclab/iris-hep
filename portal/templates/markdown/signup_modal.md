@@ -1,4 +1,4 @@
-Your use of the ATLAS Analysis Facility at UChicago shall imply acceptance of the following agreement:
+Your use of the IRIS-HEP Machine Learning Platform shall imply acceptance of the following agreement:
 
 `
 I have read and agree to the terms and conditions of the WLCG Computing Grid and the ATLAS VO Acceptable Use Policy.
